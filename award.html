@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ผลงานของฉัน</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Kanit',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#ffd6e7,#dff7ff,#fff4c9,#ffe0f0);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ดาว */
+
+.star{
+position:fixed;
+font-size:25px;
+animation:float 5s infinite ease-in-out;
+opacity:.8;
+}
+
+.star:nth-child(1){top:10%;left:10%;}
+.star:nth-child(2){top:70%;left:85%;animation-delay:1s;}
+.star:nth-child(3){top:20%;left:80%;animation-delay:2s;}
+.star:nth-child(4){top:80%;left:15%;animation-delay:3s;}
+
+@keyframes float{
+50%{
+transform:translateY(-20px) rotate(20deg);
+}
+}
+
+/* เมนู */
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:18px;
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(18px);
+padding:15px 28px;
+border-radius:50px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+z-index:99;
+}
+
+nav a{
+text-decoration:none;
+color:#ff4d88;
+font-weight:600;
+padding:8px 16px;
+border-radius:30px;
+transition:.3s;
+}
+
+nav a:hover{
+background:#ff6fa6;
+color:white;
+transform:scale(1.08);
+}
+
+/* กล่องหลัก */
+
+.container{
+padding:120px 20px 50px;
+display:flex;
+justify-content:center;
+}
+
+.card{
+width:1100px;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(18px);
+border-radius:35px;
+padding:40px;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+.card h1{
+text-align:center;
+color:#ff4d88;
+font-size:48px;
+margin-bottom:15px;
+}
+
+.card p{
+text-align:center;
+color:#555;
+margin-bottom:35px;
+}
+
+/* ผลงาน */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+}
+
+.work{
+background:white;
+padding:18px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.35s;
+text-align:center;
+}
+
+.work:hover{
+transform:translateY(-10px);
+}
+
+.work img{
+width:100%;
+height:190px;
+object-fit:cover;
+border-radius:18px;
+transition:.35s;
+}
+
+.work img:hover{
+transform:scale(1.05);
+}
+
+.work h3{
+margin-top:15px;
+color:#ff4d88;
+}
+
+.work p{
+margin-top:10px;
+font-size:16px;
+color:#666;
+}
+
+/* ปุ่ม */
+
+.button{
+display:inline-block;
+margin-top:40px;
+padding:14px 35px;
+background:linear-gradient(45deg,#ff6fa6,#ff93c9);
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-size:18px;
+transition:.3s;
+box-shadow:0 10px 20px rgba(255,105,180,.4);
+}
+
+.button:hover{
+transform:translateY(-5px);
+}
+
+.center{
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#666;
+}
+
+@media(max-width:850px){
+
+nav{
+flex-wrap:wrap;
+width:95%;
+justify-content:center;
+}
+
+.card h1{
+font-size:35px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">🌸</div>
+<div class="star">💖</div>
+
+<nav>
+<a href="index.html">🏠 หน้าหลัก</a>
+<a href="profile.html">👤 ประวัติส่วนตัว</a>
+<a href="education.html">🎓 การศึกษา</a>
+<a href="portfolio.html">💼 ผลงาน</a>
+<a href="contact.html">📞 ติดต่อ</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h1>💼 ผลงานของฉัน</h1>
+
+<p>
+รวบรวมผลงานและกิจกรรมที่ภาคภูมิใจ สามารถคลิกที่รูปเพื่อดูภาพขนาดใหญ่ได้
+</p>
+
+<div class="gallery">
+
+<div class="work">
+<a href="images/work1.jpg" target="_blank">
+<img src="images/work1.jpg" alt="ผลงาน 1">
+</a>
+<h3>Portfolio Website</h3>
+<p>เว็บไซต์ Portfolio ด้วย HTML และ CSS</p>
+</div>
+
+<div class="work">
+<a href="images/work2.jpg" target="_blank">
+<img src="images/work2.jpg" alt="ผลงาน 2">
+</a>
+<h3>Project</h3>
+<p>โครงงานที่จัดทำระหว่างการศึกษา</p>
+</div>
+
+<div class="work">
+<a href="images/work3.jpg" target="_blank">
+<img src="images/work3.jpg" alt="ผลงาน 3">
+</a>
+<h3>Certificate</h3>
+<p>เกียรติบัตรและการเข้าร่วมกิจกรรม</p>
+</div>
+
+<div class="work">
+<a href="images/work4.jpg" target="_blank">
+<img src="images/work4.jpg" alt="ผลงาน 4">
+</a>
+<h3>Activity</h3>
+<p>ภาพกิจกรรมและผลงานต่าง ๆ</p>
+</div>
+
+</div>
+
+<div class="center">
+<a href="contact.html" class="button">📞 ติดต่อฉัน</a>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+💗 Made with Love | My Portfolio 2026 💗
+</footer>
+
+</body>
+</html>
