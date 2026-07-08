@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ช่องทางการติดต่อ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Kanit',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#ffd6e7,#dff7ff,#fff4c9,#ffe0f0);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.star{
+position:fixed;
+font-size:25px;
+animation:float 5s infinite ease-in-out;
+opacity:.8;
+}
+
+.star:nth-child(1){top:10%;left:10%;}
+.star:nth-child(2){top:70%;left:85%;animation-delay:1s;}
+.star:nth-child(3){top:20%;left:80%;animation-delay:2s;}
+.star:nth-child(4){top:80%;left:15%;animation-delay:3s;}
+
+@keyframes float{
+50%{
+transform:translateY(-20px) rotate(20deg);
+}
+}
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:18px;
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(18px);
+padding:15px 28px;
+border-radius:50px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+z-index:99;
+}
+
+nav a{
+text-decoration:none;
+color:#ff4d88;
+font-weight:600;
+padding:8px 16px;
+border-radius:30px;
+transition:.3s;
+}
+
+nav a:hover{
+background:#ff6fa6;
+color:white;
+transform:scale(1.08);
+}
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+padding:20px;
+}
+
+.card{
+width:900px;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(18px);
+border-radius:35px;
+padding:45px;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+.profile img{
+width:250px;
+height:250px;
+border-radius:50%;
+object-fit:cover;
+border:8px solid white;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.info{
+flex:1;
+}
+
+.info h1{
+font-size:48px;
+color:#ff4d88;
+margin-bottom:20px;
+}
+
+.contact{
+background:white;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+line-height:2;
+font-size:18px;
+color:#555;
+}
+
+.button{
+display:inline-block;
+margin-top:30px;
+padding:14px 35px;
+background:linear-gradient(45deg,#ff6fa6,#ff93c9);
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-size:18px;
+transition:.3s;
+}
+
+.button:hover{
+transform:translateY(-5px);
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#666;
+}
+
+@media(max-width:850px){
+
+.card{
+flex-direction:column;
+text-align:center;
+margin-top:80px;
+}
+
+.profile img{
+width:180px;
+height:180px;
+}
+
+.info h1{
+font-size:36px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">🌸</div>
+<div class="star">💖</div>
+
+<nav>
+<a href="index.html">🏠 หน้าหลัก</a>
+<a href="profile.html">👤 ประวัติส่วนตัว</a>
+<a href="education.html">🎓 การศึกษา</a>
+<a href="portfolio.html">💼 ผลงาน</a>
+<a href="contact.html">📞 ติดต่อ</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<div class="profile">
+<img src="profile.jpg" alt="Profile">
+</div>
+
+<div class="info">
+
+<h1>📞 ช่องทางการติดต่อ</h1>
+
+<div class="contact">
+
+<p>📱 โทรศัพท์ : 080-798-xxxx</p>
+
+<p>📧 Email : pankanyapak52@gmail.com</p>
+
+<p>📘 Facebook : kanyapak lowjiranuwat</p>
+
+<p>📷 Instagram : pxnnnnn_15</p>
+
+<p>💬 LINE : pxnnnnn_15</p>
+
+<p>📍 ที่อยู่ : 2/20 ต.นาป่า อ.เมือง จ.ชลบุรี</p>
+
+</div>
+
+<a href="index.html" class="button">
+🏠 กลับหน้าหลัก
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+💗 Made with Love | My Portfolio 2026 💗
+</footer>
+
+</body>
+</html>
