@@ -1,22 +1,272 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <title>ประวัติส่วนตัว</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ประวัติส่วนตัว</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Kanit',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#ffd6e7,#dff7ff,#fff4c9,#ffe0f0);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.star{
+position:fixed;
+font-size:25px;
+animation:float 5s infinite ease-in-out;
+}
+
+.star:nth-child(1){top:10%;left:10%;}
+.star:nth-child(2){top:20%;right:15%;animation-delay:1s;}
+.star:nth-child(3){bottom:15%;left:20%;animation-delay:2s;}
+.star:nth-child(4){bottom:10%;right:10%;animation-delay:3s;}
+
+@keyframes float{
+50%{
+transform:translateY(-20px) rotate(20deg);
+}
+}
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:15px;
+padding:15px 28px;
+background:rgba(255,255,255,.3);
+backdrop-filter:blur(15px);
+border-radius:50px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+z-index:100;
+}
+
+nav a{
+text-decoration:none;
+color:#ff4d88;
+font-weight:bold;
+padding:8px 16px;
+border-radius:30px;
+transition:.3s;
+}
+
+nav a:hover{
+background:#ff6fa6;
+color:white;
+}
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:120px 20px 50px;
+}
+
+.card{
+max-width:950px;
+width:100%;
+display:flex;
+gap:40px;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(18px);
+padding:40px;
+border-radius:35px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.profile img{
+width:260px;
+height:260px;
+border-radius:50%;
+object-fit:cover;
+border:8px solid white;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.info{
+flex:1;
+}
+
+.info h1{
+font-size:45px;
+color:#ff4d88;
+margin-bottom:20px;
+}
+
+.info table{
+width:100%;
+border-spacing:0 12px;
+font-size:18px;
+}
+
+.info td:first-child{
+font-weight:bold;
+color:#ff4d88;
+width:180px;
+}
+
+.info td{
+color:#555;
+}
+
+.about{
+margin-top:30px;
+background:white;
+padding:20px;
+border-radius:20px;
+line-height:1.8;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.button{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:linear-gradient(45deg,#ff6fa6,#ff93c9);
+color:white;
+text-decoration:none;
+border-radius:40px;
+transition:.3s;
+}
+
+.button:hover{
+transform:translateY(-5px);
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#666;
+}
+
+@media(max-width:850px){
+
+.card{
+flex-direction:column;
+text-align:center;
+}
+
+.profile img{
+width:180px;
+height:180px;
+margin:auto;
+}
+
+.info td:first-child{
+width:120px;
+}
+
+}
+</style>
+
 </head>
+
 <body>
 
-<section>
-    <h1>ประวัติส่วนตัว</h1>
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">🌸</div>
+<div class="star">💖</div>
 
-    <p><b>ชื่อ:</b> นางสาวกัญญาภัค เหล่าจิรานุวัฒน์</p>
-    <p><b>วันเกิด:</b> 15/05/2552</p>
-    <p><b>อายุ:</b> 17 ปี</p>
-    <p><b>ความสามารถ:</b> เล่นกีตาร์,เล่นกีฬา</p>
-    <p><b>งานอดิเรก:</b> อ่านหนังสือ , ดูหนัง  </p>
+<nav>
+<a href="index.html">🏠 หน้าหลัก</a>
+<a href="profile.html">👤 ประวัติส่วนตัว</a>
+<a href="education.html">🎓 การศึกษา</a>
+<a href="portfolio.html">💼 ผลงาน</a>
+<a href="contact.html">📞 ติดต่อ</a>
+</nav>
 
-</section>
+<div class="container">
+
+<div class="card">
+
+<div class="profile">
+<img src="profile.jpg" alt="Profile">
+</div>
+
+<div class="info">
+
+<h1>👤 ประวัติส่วนตัว</h1>
+
+<table>
+<tr>
+<td>ชื่อ - สกุล</td>
+<td>นางสาวกัญญาภัค เหล่าจิรานุวัฒน์</td>
+</tr>
+
+<tr>
+<td>ชื่อเล่น</td>
+<td>น้ำปั่น</td>
+</tr>
+
+<tr>
+<td>วันเกิด</td>
+<td>15 พฤษภาคม 2552</td>
+</tr>
+
+<tr>
+<td>อายุ</td>
+<td>17 ปี</td>
+</tr>
+
+<tr>
+<td>สัญชาติ</td>
+<td>ไทย</td>
+</tr>
+
+<tr>
+<td>ศาสนา</td>
+<td>พุทธ</td>
+</tr>
+
+<tr>
+<td>งานอดิเรก</td>
+<td>ฟังเพลง ดูหนัง เล่นกีตาร์</td>
+</tr>
+</table>
+
+<div class="about">
+<h3>🌸 เกี่ยวกับฉัน</h3>
+<p>
+เป็นผู้ที่มีความรับผิดชอบ รักการเรียนรู้สิ่งใหม่ ๆ
+มีความตั้งใจในการพัฒนาทักษะด้านเทคโนโลยี
+สามารถทำงานร่วมกับผู้อื่นได้ดี และพร้อมเรียนรู้ประสบการณ์ใหม่อยู่เสมอ
+</p>
+</div>
+
+<a href="education.html" class="button">
+🎓 ดูประวัติการศึกษา
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+💗 My Portfolio 2026 💗
+</footer>
 
 </body>
 </html>
