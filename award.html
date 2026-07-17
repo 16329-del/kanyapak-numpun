@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ผลงานของฉัน</title>
+<title>รางวัลและความภาคภูมิใจ</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -30,19 +29,17 @@ overflow-x:hidden;
 100%{background-position:0% 50%;}
 }
 
-/* ดาว */
-
 .star{
 position:fixed;
 font-size:25px;
 animation:float 5s infinite ease-in-out;
-opacity:.8;
+z-index: 1;
 }
 
 .star:nth-child(1){top:10%;left:10%;}
-.star:nth-child(2){top:70%;left:85%;animation-delay:1s;}
-.star:nth-child(3){top:20%;left:80%;animation-delay:2s;}
-.star:nth-child(4){top:80%;left:15%;animation-delay:3s;}
+.star:nth-child(2){top:20%;right:15%;animation-delay:1s;}
+.star:nth-child(3){bottom:15%;left:20%;animation-delay:2s;}
+.star:nth-child(4){bottom:10%;right:10%;animation-delay:3s;}
 
 @keyframes float{
 50%{
@@ -50,133 +47,138 @@ transform:translateY(-20px) rotate(20deg);
 }
 }
 
-/* เมนู */
-
 nav{
 position:fixed;
 top:20px;
 left:50%;
 transform:translateX(-50%);
 display:flex;
-gap:18px;
-background:rgba(255,255,255,.25);
-backdrop-filter:blur(18px);
+gap:15px;
 padding:15px 28px;
+background:rgba(255,255,255,.3);
+backdrop-filter:blur(15px);
 border-radius:50px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
-z-index:99;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+z-index:100;
+width: max-content;
+max-width: 90%;
+overflow-x: auto;
 }
 
 nav a{
 text-decoration:none;
 color:#ff4d88;
-font-weight:600;
+font-weight:bold;
 padding:8px 16px;
 border-radius:30px;
 transition:.3s;
+white-space: nowrap;
 }
 
-nav a:hover{
+nav a:hover, nav a.active {
 background:#ff6fa6;
 color:white;
-transform:scale(1.08);
 }
-
-/* กล่องหลัก */
 
 .container{
-padding:120px 20px 50px;
-display:flex;
-justify-content:center;
+max-width: 1000px;
+margin: 0 auto;
+padding: 120px 20px 50px;
+position: relative;
+z-index: 2;
 }
 
-.card{
-width:1100px;
-background:rgba(255,255,255,.35);
-backdrop-filter:blur(18px);
-border-radius:35px;
-padding:40px;
-box-shadow:0 20px 50px rgba(0,0,0,.15);
+.page-title {
+text-align: center;
+font-size: 40px;
+color: #ff4d88;
+margin-bottom: 40px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
 }
 
-.card h1{
-text-align:center;
-color:#ff4d88;
-font-size:48px;
-margin-bottom:15px;
+/* ส่วนแสดงบล็อกรางวัล 4 อัน */
+.award-grid {
+display: flex;
+flex-direction: column;
+gap: 30px;
 }
 
-.card p{
-text-align:center;
-color:#555;
-margin-bottom:35px;
+.award-card {
+display: flex;
+gap: 30px;
+background: rgba(255,255,255,.35);
+backdrop-filter: blur(18px);
+padding: 30px;
+border-radius: 35px;
+box-shadow: 0 15px 35px rgba(0,0,0,.1);
+align-items: center;
+transition: 0.3s;
 }
 
-/* ผลงาน */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
+.award-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 40px rgba(0,0,0,.15);
 }
 
-.work{
-background:white;
-padding:18px;
-border-radius:25px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-transition:.35s;
-text-align:center;
+.award-img {
+flex-shrink: 0;
 }
 
-.work:hover{
-transform:translateY(-10px);
+.award-img img {
+width: 220px;
+height: 160px;
+border-radius: 20px;
+object-fit: cover;
+border: 6px solid white;
+box-shadow: 0 10px 20px rgba(0,0,0,.1);
 }
 
-.work img{
-width:100%;
-height:190px;
-object-fit:cover;
-border-radius:18px;
-transition:.35s;
+.award-info {
+flex: 1;
 }
 
-.work img:hover{
-transform:scale(1.05);
+.award-info h2 {
+font-size: 24px;
+color: #ff4d88;
+margin-bottom: 10px;
 }
 
-.work h3{
-margin-top:15px;
-color:#ff4d88;
+.award-info .date {
+font-size: 15px;
+color: #888;
+margin-bottom: 10px;
+font-weight: 300;
 }
 
-.work p{
-margin-top:10px;
-font-size:16px;
-color:#666;
+.award-info p {
+color: #555;
+line-height: 1.6;
+background: white;
+padding: 15px;
+border-radius: 15px;
+box-shadow: 0 5px 15px rgba(0,0,0,.04);
 }
 
-/* ปุ่ม */
+.action-area {
+text-align: center;
+margin-top: 40px;
+}
 
 .button{
 display:inline-block;
-margin-top:40px;
-padding:14px 35px;
+padding:14px 30px;
 background:linear-gradient(45deg,#ff6fa6,#ff93c9);
 color:white;
 text-decoration:none;
 border-radius:40px;
-font-size:18px;
 transition:.3s;
-box-shadow:0 10px 20px rgba(255,105,180,.4);
+font-weight: bold;
+box-shadow: 0 10px 20px rgba(255,111,166,0.3);
 }
 
 .button:hover{
 transform:translateY(-5px);
-}
-
-.center{
-text-align:center;
+box-shadow: 0 15px 25px rgba(255,111,166,0.4);
 }
 
 footer{
@@ -185,20 +187,24 @@ padding:25px;
 color:#666;
 }
 
-@media(max-width:850px){
-
-nav{
-flex-wrap:wrap;
-width:95%;
-justify-content:center;
+/* รองรับหน้าจอมือถือ */
+@media(max-width:768px){
+.award-card {
+flex-direction: column;
+text-align: center;
+padding: 25px;
 }
 
-.card h1{
-font-size:35px;
+.award-img img {
+width: 100%;
+max-width: 280px;
+height: 180px;
 }
 
+.award-info p {
+text-align: left;
 }
-
+}
 </style>
 
 </head>
@@ -214,66 +220,77 @@ font-size:35px;
 <a href="index.html">🏠 หน้าหลัก</a>
 <a href="profile.html">👤 ประวัติส่วนตัว</a>
 <a href="education.html">🎓 การศึกษา</a>
+<a href="award.html" class="active">🏆 รางวัล</a>
 <a href="portfolio.html">💼 ผลงาน</a>
 <a href="contact.html">📞 ติดต่อ</a>
 </nav>
 
 <div class="container">
 
-<div class="card">
+<h1 class="page-title">🏆 รางวัลและความภาคภูมิใจ</h1>
 
-<h1>💼 ผลงานของฉัน</h1>
+<div class="award-grid">
 
-<p>
-รวบรวมผลงานและกิจกรรมที่ภาคภูมิใจ สามารถคลิกที่รูปเพื่อดูภาพขนาดใหญ่ได้
-</p>
+<!-- บล็อกที่ 1 -->
+<div class="award-card">
+<div class="award-img">
+<img src="images/award1.jpeg" alt="รางวัลที่ 1" onerror="this.src='https://via.placeholder.com/220x160?text=Award+Image'">
+</div>
+<div class="award-info">
+<h2>🥇 รางวัลชนะเลิศการประกวด...</h2>
+<div class="date">📅 วันที่ได้รับ: 15 มกราคม 2569</div>
+<p>รายละเอียดของรางวัลหรือผลงานชิ้นนี้ ใส่ข้อมูลความภาคภูมิใจ ทักษะที่ได้ใช้ในการแข่งขัน หรือความรู้สึกที่ได้รับรางวัลนี้ลงไปได้เลยค่ะ</p>
+</div>
+</div>
 
-<div class="gallery">
+<!-- บล็อกที่ 2 -->
+<div class="award-card">
+<div class="award-img">
+<img src="images/award2.jpeg" alt="รางวัลที่ 2" onerror="this.src='https://via.placeholder.com/220x160?text=Award+Image'">
+</div>
+<div class="award-info">
+<h2>🥈 รางวัลรองชนะเลิศอันดับ 1...</h2>
+<div class="date">📅 วันที่ได้รับ: 20 กุมภาพันธ์ 2569</div>
+<p>รายละเอียดของรางวัลชิ้นที่สอง เขียนเล่าถึงความตั้งใจ ความพยายาม หรือบรรยากาศการทำกิจกรรมและการแข่งขันครั้งนี้</p>
+</div>
+</div>
 
-<div class="work">
-<a href="images/work1.jpg" target="_blank">
-<img src="images/work1.jpg" alt="ผลงาน 1">
+<!-- บล็อกที่ 3 -->
+<div class="award-card">
+<div class="award-img">
+<img src="images/award3.jpeg" alt="รางวัลที่ 3" onerror="this.src='https://via.placeholder.com/220x160?text=Award+Image'">
+</div>
+<div class="award-info">
+<h2>🥉 เกียรติบัตรเข้าร่วมกิจกรรม...</h2>
+<div class="date">📅 วันที่ได้รับ: 5 มีนาคม 2569</div>
+<p>รายละเอียดกิจกรรมชิ้นที่สาม การได้เรียนรู้สิ่งใหม่ ๆ หรือความประทับใจจากการเข้าร่วมโครงการหรือการประกวดนี้</p>
+</div>
+</div>
+
+<!-- บล็อกที่ 4 -->
+<div class="award-card">
+<div class="award-img">
+<img src="images/award4.jpeg" alt="รางวัลที่ 4" onerror="this.src='https://via.placeholder.com/220x160?text=Award+Image'">
+</div>
+<div class="award-info">
+<h2>⭐ รางวัลนักเรียนดีเด่น / ผลงานยอดเยี่ยม</h2>
+<div class="date">📅 วันที่ได้รับ: 1 เมษายน 2569</div>
+<p>รายละเอียดผลงานหรือรางวัลชิ้นที่สี่ สามารถเขียนสรุปภาพรวมความสำเร็จ หรือรางวัลอื่น ๆ ที่สร้างความภาคภูมิใจให้กับตนเองและครอบครัว</p>
+</div>
+</div>
+
+</div>
+
+<div class="action-area">
+<a href="portfolio.html" class="button">
+💼 ไปดูหน้าผลงานถัดไป
 </a>
-<h3>Portfolio Website</h3>
-<p>เว็บไซต์ Portfolio ด้วย HTML และ CSS</p>
-</div>
-
-<div class="work">
-<a href="images/work2.jpg" target="_blank">
-<img src="images/work2.jpg" alt="ผลงาน 2">
-</a>
-<h3>Project</h3>
-<p>โครงงานที่จัดทำระหว่างการศึกษา</p>
-</div>
-
-<div class="work">
-<a href="images/work3.jpg" target="_blank">
-<img src="images/work3.jpg" alt="ผลงาน 3">
-</a>
-<h3>Certificate</h3>
-<p>เกียรติบัตรและการเข้าร่วมกิจกรรม</p>
-</div>
-
-<div class="work">
-<a href="images/work4.jpg" target="_blank">
-<img src="images/work4.jpg" alt="ผลงาน 4">
-</a>
-<h3>Activity</h3>
-<p>ภาพกิจกรรมและผลงานต่าง ๆ</p>
-</div>
-
-</div>
-
-<div class="center">
-<a href="contact.html" class="button">📞 ติดต่อฉัน</a>
-</div>
-
 </div>
 
 </div>
 
 <footer>
-💗 Made with Love | My Portfolio 2026 💗
+💗 My Portfolio 2026 💗
 </footer>
 
 </body>
