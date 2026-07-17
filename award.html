@@ -96,11 +96,12 @@ margin-bottom: 40px;
 text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
 }
 
-/* ส่วนแสดงบล็อกรางวัล 4 อัน */
+/* ปรับปรุงโครงสร้าง Grid ป้องกันการบีบตัว */
 .award-grid {
 display: flex;
 flex-direction: column;
 gap: 30px;
+width: 100%;
 }
 
 .award-card {
@@ -113,6 +114,7 @@ border-radius: 35px;
 box-shadow: 0 15px 35px rgba(0,0,0,.1);
 align-items: center;
 transition: 0.3s;
+width: 100%;
 }
 
 .award-card:hover {
@@ -125,8 +127,8 @@ flex-shrink: 0;
 }
 
 .award-img img {
-width: 220px;
-height: 160px;
+width: 240px;
+height: 170px;
 border-radius: 20px;
 object-fit: cover;
 border: 6px solid white;
@@ -135,6 +137,7 @@ box-shadow: 0 10px 20px rgba(0,0,0,.1);
 
 .award-info {
 flex: 1;
+min-width: 0; /* ป้องกันข้อความดันดันหน้าเว็บล้น */
 }
 
 .award-info h2 {
@@ -147,7 +150,7 @@ margin-bottom: 10px;
 font-size: 15px;
 color: #888;
 margin-bottom: 10px;
-font-weight: 300;
+font-weight: 400;
 }
 
 .award-info p {
@@ -187,18 +190,19 @@ padding:25px;
 color:#666;
 }
 
-/* รองรับหน้าจอมือถือ */
+/* รองรับหน้าจอมือถือและแท็บเล็ตขนาดเล็ก */
 @media(max-width:768px){
 .award-card {
 flex-direction: column;
 text-align: center;
 padding: 25px;
+gap: 20px;
 }
 
 .award-img img {
 width: 100%;
-max-width: 280px;
-height: 180px;
+max-width: 320px;
+height: 200px;
 }
 
 .award-info p {
@@ -220,7 +224,7 @@ text-align: left;
 <a href="index.html">🏠 หน้าหลัก</a>
 <a href="profile.html">👤 ประวัติส่วนตัว</a>
 <a href="education.html">🎓 การศึกษา</a>
-<a href="award.html">🏆 รางวัล</a>
+<a href="award.html" class="active">🏆 รางวัล</a>
 <a href="contact.html">📞 ติดต่อ</a>
 </nav>
 
@@ -230,25 +234,25 @@ text-align: left;
 
 <div class="award-grid">
 
-<!-- บล็อกที่ 1 -->
+<!-- บล็อกที่ 1 (แก้ไขแท็กที่เปิดค้างไว้เรียบร้อย) -->
 <div class="award-card">
 <div class="award-img">
-<img src="images/IMG_0696.jpeg" alt="รางวัลที่ 1" onerror="this.src='https://via.placeholder.com/220x160?text=Award+Image'">
+<img src="images/IMG_0696.jpeg" alt="รางวัลที่ 1" onerror="this.src='https://via.placeholder.com/240x170?text=Award+Image'">
 </div>
 <div class="award-info">
 <h2>✨ ด้านวิชาการและผลการเรียนเด่น</h2>
-<div class="date" "รางวัล ดาวจรัสแสง" ประจำปีการศึกษา 2568</div>
+<div class="date">📅 "รางวัล ดาวจรัสแสง" ประจำปีการศึกษา 2568</div>
 <p>เกียรติบัตรฉบับนี้ออกโดยโรงเรียนพานทอง เพื่อประกาศเกียรติคุณให้แก่ นางสาวกัญญาภัค เหล่าจิรานุวัฒน์ นักเรียนระดับชั้นมัธยมศึกษาปีที่ 5/1 เนื่องจากได้รับ "รางวัล ดาวจรัสแสง" ประจำปีการศึกษา 2568 โดยมีผลการเรียนดีเด่นเฉลี่ย 3.83</p>
 </div>
 </div>
 
-<!-- บล็อกที่ 2 -->
+<!-- บล็อกที่ 2 (แก้ไขแท็ก h2 ที่เขียนเบี้ยวเรียบร้อย) -->
 <div class="award-card">
 <div class="award-img">
-<img src="images/IMG_0693.jpeg" alt="รางวัลที่ 2" onerror="this.src='https://via.placeholder.com/220x160?text=Award+Image'">
+<img src="images/IMG_0693.jpeg" alt="รางวัลที่ 2" onerror="this.src='https://via.placeholder.com/240x170?text=Award+Image'">
 </div>
 <div class="award-info">
-<h>🔬ด้านทักษะวิทยาศาสตร์และเทคโนโลยี</h2>
+<h2>🔬 ด้านทักษะวิทยาศาสตร์และเทคโนโลยี</h2>
 <div class="date">📅 "กิจกรรมค่าย STEM นักวิทย์ฯคิดสร้างสรรค์" ประจำปีการศึกษา 2567</div>
 <p>เกียรติบัตรฉบับนี้ออกโดยโรงเรียนพานทอง มอบให้แก่ เด็กหญิงกัญญาภัค เหล่าจิรานุวัฒน์ เพื่อแสดงว่าได้เข้าร่วม "กิจกรรมค่าย STEM นักวิทย์ฯคิดสร้างสรรค์" ประจำปีการศึกษา 2567 กิจกรรมนี้จัดขึ้นเมื่อวันที่ 21 และ 28 มิถุนายน พ.ศ. 2567 ณ โรงเรียนพานทอง จ.ชลบุรี และ มินิมูร่าห์ฟาร์ม จ.ฉะเชิงเทรา</p>
 </div>
@@ -257,11 +261,11 @@ text-align: left;
 <!-- บล็อกที่ 3 -->
 <div class="award-card">
 <div class="award-img">
-<img src="images/IMG_0694.jpeg" alt="รางวัลที่ 3" onerror="this.src='https://via.placeholder.com/220x160?text=Award+Image'">
+<img src="images/IMG_0694.jpeg" alt="รางวัลที่ 3" onerror="this.src='https://via.placeholder.com/240x170?text=Award+Image'">
 </div>
 <div class="award-info">
 <h2>🩺 ด้านกิจกรรมจิตอาสาและบริการชุมชน</h2>
-<div class="date">📅เข้าร่วมและสนับสนุนกิจกรรม "วันเทคนิคการแพทย์ไทย"</div>
+<div class="date">📅 เข้าร่วมและสนับสนุนกิจกรรม "วันเทคนิคการแพทย์ไทย"</div>
 <p>ได้มีโอกาสเข้าร่วมและสนับสนุนกิจกรรม "วันเทคนิคการแพทย์ไทย" ซึ่งเป็นความร่วมมือระหว่างโรงเรียนพานทองและโรงพยาบาลพานทอง ในการจัดโครงการส่งเสริมสุขภาพเชิงรุกและให้บริการตรวจคัดกรองโรคต่าง ๆ ให้แก่คณะครู บุคลากรทางการศึกษา นักเรียน และประชาชนในชุมชน ซึ่งกิจกรรมนี้ทำให้หนูได้เรียนรู้ถึงความสำคัญของการเสียสละเพื่อส่วนรวม และสร้างความตระหนักในเรื่องการดูแลสุขภาพเพื่อคุณภาพชีวิตที่ดีอย่างยั่งยืนค่ะ</p>
 </div>
 </div>
@@ -269,7 +273,7 @@ text-align: left;
 <!-- บล็อกที่ 4 -->
 <div class="award-card">
 <div class="award-img">
-<img src="images/IMG_0695.jpeg" alt="รางวัลที่ 4" onerror="this.src='https://via.placeholder.com/220x160?text=Award+Image'">
+<img src="images/IMG_0695.jpeg" alt="รางวัลที่ 4" onerror="this.src='https://via.placeholder.com/240x170?text=Award+Image'">
 </div>
 <div class="award-info">
 <h2>🤝 ด้านความเป็นผู้นำและกิจกรรมสร้างสรรค์</h2>
@@ -282,7 +286,7 @@ text-align: left;
 
 <div class="action-area">
 <a href="contact.html" class="button">
-📞ไปดูหน้าติดต่อถัดไป
+📞 ไปดูหน้าติดต่อถัดไป
 </a>
 </div>
 
