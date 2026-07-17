@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>รางวัลและความภาคภูมิใจ</title>
+<title>ประวัติการศึกษา</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -15,7 +15,7 @@ box-sizing:border-box;
 font-family:'Kanit',sans-serif;
 }
 
-/* ปรับ body ให้เรียงแบบแนวตั้ง เพื่อบังคับ footer อยู่ล่างสุด */
+/* ตั้งค่า body เป็น flex แนวตั้ง เพื่อให้ดัน footer ลงไปล่างสุดเสมอ */
 body{
 background:linear-gradient(-45deg,#ffd6e7,#dff7ff,#fff4c9,#ffe0f0);
 background-size:400% 400%;
@@ -83,93 +83,66 @@ background:#ff6fa6;
 color:white;
 }
 
-/* ให้ container ขยายตัวกินพื้นที่ส่วนใหญ่ เพื่อดัน footer ลงล่าง */
+/* ขยาย container ให้ตรงกลางและสมดุล */
 .container{
 flex: 1;
-max-width: 1000px;
+max-width: 950px;
 width: 100%;
 margin: 0 auto;
-padding: 120px 20px 50px;
+padding: 120px 20px 40px;
 position: relative;
 z-index: 2;
+display: flex;
+justify-content: center;
 }
 
-.page-title {
-text-align: center;
-font-size: 40px;
-color: #ff4d88;
-margin-bottom: 40px;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
-}
-
-.award-grid {
+/* กล่องการ์ดใหญ่สีขาวโปร่งแสง */
+.card{
+width:100%;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(18px);
+padding: 40px;
+border-radius:35px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
 display: flex;
 flex-direction: column;
-gap: 30px;
-width: 100%;
+gap: 25px;
 }
 
-.award-card {
-display: flex;
-gap: 30px;
-background: rgba(255,255,255,.35);
-backdrop-filter: blur(18px);
-padding: 30px;
-border-radius: 35px;
-box-shadow: 0 15px 35px rgba(0,0,0,.1);
-align-items: center;
-transition: 0.3s;
-width: 100%;
-}
-
-.award-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 20px 40px rgba(0,0,0,.15);
-}
-
-.award-img {
-flex-shrink: 0;
-}
-
-.award-img img {
-width: 240px;
-height: 170px;
-border-radius: 20px;
-object-fit: cover;
-border: 6px solid white;
-box-shadow: 0 10px 20px rgba(0,0,0,.1);
-}
-
-.award-info {
-flex: 1;
-min-width: 0;
-}
-
-.award-info h2 {
-font-size: 24px;
-color: #ff4d88;
-margin-bottom: 10px;
-}
-
-.award-info .date {
-font-size: 15px;
-color: #888;
-margin-bottom: 10px;
-font-weight: 400;
-}
-
-.award-info p {
-color: #555;
-line-height: 1.6;
+/* ปรับแต่งกล่องระดับการศึกษาให้เหมือนในรูปภาพ */
+.edu-block {
 background: white;
-padding: 15px;
-border-radius: 15px;
-box-shadow: 0 5px 15px rgba(0,0,0,.04);
+padding: 25px 30px;
+border-radius: 20px;
+box-shadow: 0 5px 15px rgba(0,0,0,.08);
+border-left: 8px solid #ff7fae; /* แถบสีชมพูด้านซ้าย */
+text-align: left;
+transition: 0.3s;
+}
+
+.edu-block:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+.edu-block h3 {
+font-size: 22px;
+color: #ff4d88;
+margin-bottom: 12px;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.edu-block p {
+font-size: 17px;
+color: #555;
+line-height: 1.8;
 }
 
 .action-area {
 text-align: center;
-margin-top: 40px;
+margin-top: 15px;
 }
 
 .button{
@@ -181,44 +154,21 @@ text-decoration:none;
 border-radius:40px;
 transition:.3s;
 font-weight: bold;
-box-shadow: 0 10px 20px rgba(255,111,166,0.3);
 }
 
 .button:hover{
 transform:translateY(-5px);
-box-shadow: 0 15px 25px rgba(255,111,166,0.4);
 }
 
-/* ปรับแต่ง footer ให้เคลียร์ค่าพิกัดและอยู่ด้านล่างสุดของเนื้อหาเสมอ */
+/* กำหนดให้ footer อยู่ล่างสุดและอยู่กึ่งกลาง */
 footer{
 text-align:center;
 padding:25px;
 color:#666;
 width: 100%;
-position: relative;
 margin-top: auto;
+position: relative;
 z-index: 2;
-clear: both;
-}
-
-/* รองรับหน้าจอมือถือและแท็บเล็ต */
-@media(max-width:768px){
-.award-card {
-flex-direction: column;
-text-align: center;
-padding: 25px;
-gap: 20px;
-}
-
-.award-img img {
-width: 100%;
-max-width: 320px;
-height: 200px;
-}
-
-.award-info p {
-text-align: left;
-}
 }
 </style>
 
@@ -234,76 +184,44 @@ text-align: left;
 <nav>
 <a href="index.html">🏠 หน้าหลัก</a>
 <a href="profile.html">👤 ประวัติส่วนตัว</a>
-<a href="education.html">🎓 การศึกษา</a>
-<a href="award.html" class="active">🏆 รางวัล</a>
+<a href="education.html" class="active">🎓 การศึกษา</a>
+<a href="award.html">🏆 รางวัล</a>
 <a href="contact.html">📞 ติดต่อ</a>
 </nav>
 
 <div class="container">
 
-<h1 class="page-title">🏆 รางวัลและความภาคภูมิใจ</h1>
+    <div class="card">
+        
+        <!-- บล็อกที่ 1: ประถมศึกษา -->
+        <div class="edu-block">
+            <h3>🏫 ระดับประถมศึกษา</h3>
+            <p>โรงเรียนบ้านทุ่งสว่าง<br>ปีการศึกษา 2558 – 2563</p>
+        </div>
 
-<div class="award-grid">
+        <!-- บล็อกที่ 2: มัธยมศึกษาตอนต้น -->
+        <div class="edu-block">
+            <h3>🏫 ระดับมัธยมศึกษาตอนต้น</h3>
+            <p>โรงเรียน บ้านทุ่งสว่าง<br>ปีการศึกษา : 2564 – 2566</p>
+        </div>
 
-<!-- บล็อกที่ 1 -->
-<div class="award-card">
-<div class="award-img">
-<img src="images/IMG_0696.jpeg" alt="รางวัลที่ 1" onerror="this.src='https://via.placeholder.com/240x170?text=Award+Image'">
-</div>
-<div class="award-info">
-<h2>✨ ด้านวิชาการและผลการเรียนเด่น</h2>
-<div class="date">📅 "รางวัล ดาวจรัสแสง" ประจำปีการศึกษา 2568</div>
-<p>เกียรติบัตรฉบับนี้ออกโดยโรงเรียนพานทอง เพื่อประกาศเกียรติคุณให้แก่ นางสาวกัญญาภัค เหล่าจิรานุวัฒน์ นักเรียนระดับชั้นมัธยมศึกษาปีที่ 5/1 เนื่องจากได้รับ "รางวัล ดาวจรัสแสง" ประจำปีการศึกษา 2568 โดยมีผลการเรียนดีเด่นเฉลี่ย 3.83</p>
-</div>
-</div>
+        <!-- บล็อกที่ 3: มัธยมศึกษาตอนปลาย -->
+        <div class="edu-block">
+            <h3>🏫 ระดับมัธยมศึกษาตอนปลาย / ปวช.</h3>
+            <p>โรงเรียน พานทอง<br>สาขา แผนการเรียนคณิตศาสตร์-วิทยาศาสตร์</p>
+        </div>
 
-<!-- บล็อกที่ 2 -->
-<div class="award-card">
-<div class="award-img">
-<img src="images/IMG_0693.jpeg" alt="รางวัลที่ 2" onerror="this.src='https://via.placeholder.com/240x170?text=Award+Image'">
-</div>
-<div class="award-info">
-<h2>🔬 ด้านทักษะวิทยาศาสตร์และเทคโนโลยี</h2>
-<div class="date">📅 "กิจกรรมค่าย STEM นักวิทย์ฯคิดสร้างสรรค์" ประจำปีการศึกษา 2567</div>
-<p>เกียรติบัตรฉบับนี้ออกโดยโรงเรียนพานทอง มอบให้แก่ เด็กหญิงกัญญาภัค เหล่าจิรานุวัฒน์ เพื่อแสดงว่าได้เข้าร่วม "กิจกรรมค่าย STEM นักวิทย์ฯคิดสร้างสรรค์" ประจำปีการศึกษา 2567 กิจกรรมนี้จัดขึ้นเมื่อวันที่ 21 และ 28 มิถุนายน พ.ศ. 2567 ณ โรงเรียนพานทอง จ.ชลบุรี และ มินิมูร่าห์ฟาร์ม จ.ฉะเชิงเทรา</p>
-</div>
-</div>
+        <!-- ปุ่มลิงก์ไปหน้าถัดไป -->
+        <div class="action-area">
+            <a href="award.html" class="button">
+                🏆 ไปดูหน้ารางวัลถัดไป
+            </a>
+        </div>
 
-<!-- บล็อกที่ 3 -->
-<div class="award-card">
-<div class="award-img">
-<img src="images/IMG_0694.jpeg" alt="รางวัลที่ 3" onerror="this.src='https://via.placeholder.com/240x170?text=Award+Image'">
-</div>
-<div class="award-info">
-<h2>🩺 ด้านกิจกรรมจิตอาสาและบริการชุมชน</h2>
-<div class="date">📅 เข้าร่วมและสนับสนุนกิจกรรม "วันเทคนิคการแพทย์ไทย"</div>
-<p>ได้มีโอกาสเข้าร่วมและสนับสนุนกิจกรรม "วันเทคนิคการแพทย์ไทย" ซึ่งเป็นความร่วมมือระหว่างโรงเรียนพานทองและโรงพยาบาลพานทอง ในการจัดโครงการส่งเสริมสุขภาพเชิงรุกและให้บริการตรวจคัดกรองโรคต่าง ๆ ให้แก่คณะครู บุคลากรทางการศึกษา นักเรียน และประชาชนในชุมชน ซึ่งกิจกรรมนี้ทำให้หนูได้เรียนรู้ถึงความสำคัญของการเสียสละเพื่อส่วนรวม และสร้างความตระหนักในเรื่องการดูแลสุขภาพเพื่อคุณภาพชีวิตที่ดีอย่างยั่งยืนค่ะ</p>
-</div>
-</div>
-
-<!-- บล็อกที่ 4 -->
-<div class="award-card">
-<div class="award-img">
-<img src="images/IMG_0695.jpeg" alt="รางวัลที่ 4" onerror="this.src='https://via.placeholder.com/240x170?text=Award+Image'">
-</div>
-<div class="award-info">
-<h2>🤝 ด้านความเป็นผู้นำและกิจกรรมสร้างสรรค์</h2>
-<div class="date">📅 เป็น "ผู้นำในการจัดกิจกรรมค่าย STEAM DAY CAMP" ประจำปีการศึกษา 2569</div>
-<p>เกียรติบัตรฉบับนี้ออกโดยโรงเรียนพานทอง มอบให้แก่ นางสาวกัญญาภัค เหล่าจิรานุวัฒน์ เพื่อแสดงว่าเป็น "ผู้นำในการจัดกิจกรรมค่าย STEAM DAY CAMP" ประจำปีการศึกษา 2569</p>
-</div>
-</div>
+    </div>
 
 </div>
 
-<div class="action-area">
-<a href="contact.html" class="button">
-📞 ไปดูหน้าติดต่อถัดไป
-</a>
-</div>
-
-</div>
-
-<!-- Footer อยู่ด้านล่างตรงนี้อย่างปลอดภัยแล้วครับ -->
 <footer>
 💗 My Portfolio 2026 💗
 </footer>
